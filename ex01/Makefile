@@ -1,6 +1,8 @@
 NAME = megaphone
 
-SRC = megaphone.cpp
+SRC =	Contact.cpp \
+		main.cpp \
+		PhoneBook.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 
@@ -18,11 +20,10 @@ $(NAME): $(OBJ)
 
 clean:
 	@rm -f $(OBJ)
-	# @say -v Samantha "clean clean clean"
+	# @say -v Samantha "already clean"
 
 fclean: clean
 	@rm -f $(NAME)
-	# @say -v Samantha "f clean bye"
 
 re: fclean all
 
