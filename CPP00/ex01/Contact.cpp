@@ -9,27 +9,27 @@ Contact::~Contact() {
 
 }
 
-void set_firstname(std::string firstname)
+void Contact::set_firstname(std::string firstname)
 {
 	this->firstname = firstname;
 }
 
-void set_lastname(std::string lastname)
+void Contact::set_lastname(std::string lastname)
 {
-	this->lastname = firstname;
+	this->lastname = lastname;
 }
 
-void set_nickname(std::string nickname)
+void Contact::set_nickname(std::string nickname)
 {
 	this->nickname = nickname;
 }
 
-void set_phone(std::string phone)
+void Contact::set_phone(std::string phone)
 {
 	this->phone = phone;
 }
 
-void set_secret(std::string secret)
+void Contact::set_secret(std::string secret)
 {
 	this->secret = secret;
 }

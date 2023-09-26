@@ -28,6 +28,7 @@ class PhoneBook {
 		void	search_contact();
 		int		check_empty_str(std::string str);
 		std::string		get_info(std::string ask);
+		void	set_info(std::string ans, int i);
 
 
 };

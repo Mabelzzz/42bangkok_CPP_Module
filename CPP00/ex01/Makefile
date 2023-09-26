@@ -1,4 +1,4 @@
-NAME = megaphone
+NAME = PhoneBook
 
 SRC =	Contact.cpp \
 		main.cpp \
@@ -16,7 +16,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	@$(CC) $(CFLAGS) $(CPPFLAGS) $(OBJ) -o $@
-	@say -v Kanya "คอมพายเมก้าโฟนโอนโอน"
+	# @say -v Kanya "คอมพายเมก้าโฟนโอนโอน"
 
 clean:
 	@rm -f $(OBJ)
