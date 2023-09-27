@@ -2,7 +2,7 @@ NAME = PhoneBook
 
 SRC =	Contact.cpp \
 		main.cpp \
-		PhoneBook.cpp \
+		Phonebook.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 

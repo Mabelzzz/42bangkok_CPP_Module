@@ -1,5 +1,5 @@
 
-#include "PhoneBook.hpp"
+#include "Phonebook.hpp"
 
 int		PhoneBook::check_empty_str(std::string str)
 {
@@ -56,17 +56,18 @@ void	PhoneBook::add_contact()
 
 void	PhoneBook::search_contact()
 {
+	//while loop cout
 	std::cout << RED << "search_contact" << RESET << std::endl;
 	std::cout << BOLD << " __________ __________ __________ __________ " << RESET << std::endl;
-	std::cout << BOLD << "┏━━━━━━━━━━┏━━━━━━━━━━┏━━━━━━━━━━┏━━━━━━━━━━┓" << RESET << std::endl;
-	std::cout << BOLD << "┃     index┃ firstname┃  lastname┃  nickname┃" << RESET << std::endl;
-	std::cout << BOLD << "┗━━━━━━━━━━┛━━━━━━━━━━┛━━━━━━━━━━┛━━━━━━━━━━┛" << RESET << std::endl;
-	std::cout << BOLD << "┃     index┃ firstname┃  lastname┃  nickname┃" << RESET << std::endl;
-	std::cout << BOLD << "┗━━━━━━━━━━┛━━━━━━━━━━┛━━━━━━━━━━┛━━━━━━━━━━┛" << RESET << std::endl;
-	std::cout << BOLD << "┃     index┃ firstname┃  lastname┃  nickname┃" << RESET << std::endl;
-	std::cout << BOLD << "┗━━━━━━━━━━┛━━━━━━━━━━┛━━━━━━━━━━┛━━━━━━━━━━┛" << RESET << std::endl;
+	// std::cout << BOLD << "┏━━━━━━━━━━┏━━━━━━━━━━┏━━━━━━━━━━┏━━━━━━━━━━┓" << RESET << std::endl;
+	// std::cout << BOLD << "┃     index┃ firstname┃  lastname┃  nickname┃" << RESET << std::endl;
+	// std::cout << BOLD << "┗━━━━━━━━━━┛━━━━━━━━━━┛━━━━━━━━━━┛━━━━━━━━━━┛" << RESET << std::endl;
+	// std::cout << BOLD << "┃     index┃ firstname┃  lastname┃  nickname┃" << RESET << std::endl;
+	// std::cout << BOLD << "┗━━━━━━━━━━┛━━━━━━━━━━┛━━━━━━━━━━┛━━━━━━━━━━┛" << RESET << std::endl;
+	// std::cout << BOLD << "┃     index┃ firstname┃  lastname┃  nickname┃" << RESET << std::endl;
+	// std::cout << BOLD << "┗━━━━━━━━━━┛━━━━━━━━━━┛━━━━━━━━━━┛━━━━━━━━━━┛" << RESET << std::endl;
 	//   index, firstname, lastname, nickname
-	┏━━━━  ━  ━  ━  ━  ━  ━  ━  ━  ┓
- | ━  ━  ━  ━  ━  ━  ━  ━  ━  ━  ━  ━  ━ ┃
-┗━━━━━━━  ━  ━  ━  ━  ━  ━ ┛
+// 	┏━━━━  ━  ━  ━  ━  ━  ━  ━  ━  ┓
+//  | ━  ━  ━  ━  ━  ━  ━  ━  ━  ━  ━  ━  ━ ┃
+// ┗━━━━━━━  ━  ━  ━  ━  ━  ━ ┛
 }
