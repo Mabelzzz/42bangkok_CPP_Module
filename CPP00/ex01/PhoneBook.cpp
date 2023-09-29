@@ -58,31 +58,33 @@ std::string		PhoneBook::get_info(std::string ask, int mode)
 void	PhoneBook::add_contact(int index)
 {
 	// this->cur = index;
-	this->contact[index].set_firstname(get_info("Enter your FirstName: ", 1));
-	this->contact[index].set_lastname(get_info("Enter your LastName: ", 1));
-	this->contact[index].set_nickname(get_info("Enter your Nickname: ", 1));
-	this->contact[index].set_phone(get_info("Enter your Phone: ", 1));
-	this->contact[index].set_secret(get_info("Enter your DarkSecret: ", 1));
+	this->contact[index % 8].set_firstname(get_info("Enter your FirstName: ", 1));
+	this->contact[index % 8].set_lastname(get_info("Enter your LastName: ", 1));
+	this->contact[index % 8].set_nickname(get_info("Enter your Nickname: ", 1));
+	this->contact[index % 8].set_phone(get_info("Enter your Phone: ", 1));
+	this->contact[index % 8].set_secret(get_info("Enter your DarkSecret: ", 1));
 	print_contact(index);
 }
 
 void	PhoneBook::print_contact(int index)
 {
-		std::cout << BLUE << "┏━━━━━━━━━━┓━━━━━━━━━━┓━━━━━━━━━━┓━━━━━━━━━━┏━━━━━━━━━━┏━━━━━━━━━━┓" << RESET << std::endl;
-		std::cout << BOLD << "┃     index┃ firstname┃  lastname┃  nickname┃     phone┃    secret┃" << RESET << std::endl;
-		std::cout << BLUE << "┗━━━━━━━━━━┗━━━━━━━━━━┗━━━━━━━━━━┗━━━━━━━━━━┗━━━━━━━━━━┗━━━━━━━━━━┛" << RESET << std::endl;
+		if (index > 7)
+		index = 7;
+		std::cout << YELLOW << "┏━━━━━━━━━━┓━━━━━━━━━━┓━━━━━━━━━━┓━━━━━━━━━━┏━━━━━━━━━━┏━━━━━━━━━━┓" << RESET << std::endl;
+		std::cout << YELLOW << "┃     index┃ firstname┃  lastname┃  nickname┃     phone┃    secret┃" << RESET << std::endl;
+		std::cout << YELLOW << "┗━━━━━━━━━━┗━━━━━━━━━━┗━━━━━━━━━━┗━━━━━━━━━━┗━━━━━━━━━━┗━━━━━━━━━━┛" << RESET << std::endl;
 	for (int i = 0; i <= index; i++)
 	{
 		// sub_str(i - '0');
-		std::cout << std::left << std::setw(1) << "┃"
-							<< std::right << std::setw(10) << std::to_string(i);
+		std::cout << MAGENTA << std::left << std::setw(1) << "┃";
+		std::cout << CYAN << std::right << std::setw(10) << std::to_string(i);
 		sub_str(this->contact[i].get_firstname());
 		sub_str(this->contact[i].get_lastname());
 		sub_str(this->contact[i].get_nickname());
 		sub_str(this->contact[i].get_phone());
 		sub_str(this->contact[i].get_secret());
-		std::cout << "┃" << std::endl;
-		std::cout << BLUE << "┗━━━━━━━━━━┗━━━━━━━━━━┗━━━━━━━━━━┗━━━━━━━━━━┗━━━━━━━━━━┗━━━━━━━━━━┛" << RESET << std::endl;
+		std::cout << MAGENTA << "┃" << std::endl;
+		std::cout << MAGENTA << "┗━━━━━━━━━━┗━━━━━━━━━━┗━━━━━━━━━━┗━━━━━━━━━━┗━━━━━━━━━━┗━━━━━━━━━━┛" << RESET << std::endl;
 	}
 }
 
@@ -98,8 +100,8 @@ void	PhoneBook::sub_str(std::string str)
 	// 	std::cout << str.insert(10 - len, " ") << std::endl;
 		// return (str.insert(10 - len, " "));
 
-		std::cout << std::left << std::setw(1) << "┃"
-							<< std::right << std::setw(10) << str;
+		std::cout << MAGENTA << std::left << std::setw(1) << "┃";
+		std::cout << CYAN << std::right << std::setw(10) << str;
 		// std::cout << "---------------------------------------------------------------------"<< std::endl;
 	// return (str);
 

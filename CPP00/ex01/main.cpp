@@ -22,9 +22,9 @@ int	main(void)
 		if (str_upper(cmd) == "ADD")
 		{
 			pb.add_contact(index);
-			if (index == 7)
-				index = 0;
-			else
+			// if (index == 7)
+			// 	index = 0;
+			// else
 				index++;
 		}
 		else if (str_upper(cmd) == "SEARCH")
