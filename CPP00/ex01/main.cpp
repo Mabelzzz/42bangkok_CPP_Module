@@ -14,12 +14,19 @@ int	main(void)
 {
 	PhoneBook pb;
 	std::string cmd;
+	int index = 0;
 
 	while (1)
 	{
 		std::cout << BOLD << "Pls enter your command: " , std::getline (std::cin, cmd);
 		if (str_upper(cmd) == "ADD")
-			pb.add_contact();
+		{
+			pb.add_contact(index);
+			if (index == 7)
+				index = 0;
+			else
+				index++;
+		}
 		else if (str_upper(cmd) == "SEARCH")
 			pb.search_contact();
 		else if (str_upper(cmd) == "EXIT")

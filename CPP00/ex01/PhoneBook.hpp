@@ -21,14 +21,17 @@
 class PhoneBook {
 	private:
 		Contact contact[MaxContact];
-		int		index;
+		int		cur;
 
 	public:
-		void	add_contact();
+		void	add_contact(int index);
 		void	search_contact();
 		int		check_empty_str(std::string str);
-		std::string		get_info(std::string ask);
-		void	set_info(std::string ans, int i);
+		int		check_nbr(std::string str);
+		std::string		get_info(std::string ask, int mode);
+		void		sub_str(std::string str);
+		void	print_contact(int index);
+		// void	set_info(std::string ans, int i);
 
 
 };
