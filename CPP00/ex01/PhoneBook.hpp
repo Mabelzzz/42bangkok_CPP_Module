@@ -25,12 +25,13 @@ class PhoneBook {
 
 	public:
 		void	add_contact(int index);
-		void	search_contact();
+		void	search_contact(int index);
 		int		check_empty_str(std::string str);
 		int		check_nbr(std::string str);
 		std::string		get_info(std::string ask, int mode);
 		void		sub_str(std::string str);
 		void	print_contact(int index);
+		int		check_index(std::string search);
 		// void	set_info(std::string ans, int i);
 
 

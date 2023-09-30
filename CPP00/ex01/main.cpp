@@ -1,8 +1,6 @@
 
 #include "Phonebook.hpp"
 
-// std::string str_upper(std::const string str);
-
 std::string str_upper(std::string str)
 {
 	for (int i = 0; str[i]; i++)
@@ -22,15 +20,16 @@ int	main(void)
 		if (str_upper(cmd) == "ADD")
 		{
 			pb.add_contact(index);
-			// if (index == 7)
-			// 	index = 0;
-			// else
+			std::cout << GREEN << "Add contact succesful" << RESET << std::endl;
 				index++;
 		}
 		else if (str_upper(cmd) == "SEARCH")
-			pb.search_contact();
+			pb.search_contact(index);
 		else if (str_upper(cmd) == "EXIT")
+		{
+			std::cout << GREEN << "Exit succesful" << RESET << std::endl;
 			return (0);
+		}
 		else
 			std::cout << RED << "Invalid command" << RESET << std::endl;
 	}

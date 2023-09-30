@@ -3,40 +3,30 @@
 
 int		PhoneBook::check_empty_str(std::string str)
 {
-	// if (!str || !str[0])
-	// 	return (0);
+	if (!str)
+		return (1);
 	str.c_str();
-	// for (int i = 0; str[i]; i++)
-	// {
-	// 	if (str[i] != " ")
-	// 		return (1);
-	// }
+	for (int i = 0; str[i]; i++)
+	{
+		if (!isspace(str[i]))
+			return (0);
+	}
 	return (1);
 }
 
 int		PhoneBook::check_nbr(std::string str)
 {
-
 	str.c_str();
-
+	for(int i = 0; str[i]; i++)
+	{
+		if (!isdigit(str[i]))
+		{
+			std::cout << RED << "Invalid number" << RESET << std::endl;
+			return (0);
+		}
+	}
 	return (1);
 }
-
-// void		PhoneBook::set_info(std::string ans, int i)
-// {
-// 	int	index = 0;
-
-// 	if (i == 1)
-// 		this->contact[this->cur].set_firstname(ans);
-// 	if (i == 2)
-// 		this->contact[index].set_lastname(ans);
-// 	if (i == 3)
-// 		this->contact[index].set_nickname(ans);
-// 	if (i == 4)
-// 		this->contact[index].set_phone(ans);
-// 	if (i == 5)
-// 		this->contact[index].set_secret(ans);
-// }
 
 std::string		PhoneBook::get_info(std::string ask, int mode)
 {
@@ -63,19 +53,19 @@ void	PhoneBook::add_contact(int index)
 	this->contact[index % 8].set_nickname(get_info("Enter your Nickname: ", 1));
 	this->contact[index % 8].set_phone(get_info("Enter your Phone: ", 1));
 	this->contact[index % 8].set_secret(get_info("Enter your DarkSecret: ", 1));
-	print_contact(index);
 }
 
 void	PhoneBook::print_contact(int index)
 {
 		if (index > 7)
-		index = 7;
+			index = 7;
+		else
+			index--;
 		std::cout << YELLOW << "┏━━━━━━━━━━┓━━━━━━━━━━┓━━━━━━━━━━┓━━━━━━━━━━┏━━━━━━━━━━┏━━━━━━━━━━┓" << RESET << std::endl;
 		std::cout << YELLOW << "┃     index┃ firstname┃  lastname┃  nickname┃     phone┃    secret┃" << RESET << std::endl;
 		std::cout << YELLOW << "┗━━━━━━━━━━┗━━━━━━━━━━┗━━━━━━━━━━┗━━━━━━━━━━┗━━━━━━━━━━┗━━━━━━━━━━┛" << RESET << std::endl;
 	for (int i = 0; i <= index; i++)
 	{
-		// sub_str(i - '0');
 		std::cout << MAGENTA << std::left << std::setw(1) << "┃";
 		std::cout << CYAN << std::right << std::setw(10) << std::to_string(i);
 		sub_str(this->contact[i].get_firstname());
@@ -91,53 +81,51 @@ void	PhoneBook::print_contact(int index)
 void	PhoneBook::sub_str(std::string str)
 {
 	int len = str.length();
-	// std::cout << len << " .  " + str << std::endl;
+
 	if (len > 10)
 		str = str.substr(0, 9) + '.';
-		// std::cout << str.substr(0, 9) + "." << std::endl;
-		// return (str.substr(0, 9) + ".");
-	// else
-	// 	std::cout << str.insert(10 - len, " ") << std::endl;
-		// return (str.insert(10 - len, " "));
-
 		std::cout << MAGENTA << std::left << std::setw(1) << "┃";
 		std::cout << CYAN << std::right << std::setw(10) << str;
-		// std::cout << "---------------------------------------------------------------------"<< std::endl;
-	// return (str);
-
 }
 
-void	PhoneBook::search_contact()
+int		PhoneBook::check_index(std::string search)
 {
-	int index = 0;
-	//while loop cout
-		std::cout << RED << "search_contact" << RESET << std::endl;
-		// std::cout << BOLD << get_info("Enter index: ", 2) << std::endl;
-		// std::cout << this->contact[index].get_firstname().substr(0, 9) + "." << std::endl;
-		// std::cout << BOLD << "|----------|----------|----------|----------|----------|" << RESET << std::endl;
-		std::cout << BOLD << "┏━━━━━━━━━━┏━━━━━━━━━━┏━━━━━━━━━━┏━━━━━━━━━━┓" << RESET << std::endl;
-	// for (int i = 0; i < 2; i++)
-	// {
-		sub_str(get_info("Enter index: ", 2));
-		sub_str(this->contact[index].get_firstname());
-		sub_str(this->contact[index].get_lastname());
-		sub_str(this->contact[index].get_nickname());
-		std::cout << "┃" << std::endl;
-		std::cout << BOLD << "┗━━━━━━━━━━┛━━━━━━━━━━┛━━━━━━━━━━┛━━━━━━━━━━┛" << RESET << std::endl;
-		// std::cout << BOLD << "|----------|----------|----------|----------|----------|" << RESET << std::endl;
-	// }
+	int		idx;
 
-	// std::cout << BOLD << " __________ __________ __________ __________ " << RESET << std::endl;
-	// .substr(0, 10)
-	// std::cout << BOLD << "┏━━━━━━━━━━┏━━━━━━━━━━┏━━━━━━━━━━┏━━━━━━━━━━┓" << RESET << std::endl;
-	// std::cout << BOLD << "┃     index┃ firstname┃  lastname┃  nickname┃" << RESET << std::endl;
-	// std::cout << BOLD << "┗━━━━━━━━━━┛━━━━━━━━━━┛━━━━━━━━━━┛━━━━━━━━━━┛" << RESET << std::endl;
-	// std::cout << BOLD << "┃     index┃ firstname┃  lastname┃  nickname┃" << RESET << std::endl;
-	// std::cout << BOLD << "┗━━━━━━━━━━┛━━━━━━━━━━┛━━━━━━━━━━┛━━━━━━━━━━┛" << RESET << std::endl;
-	// std::cout << BOLD << "┃     index┃ firstname┃  lastname┃  nickname┃" << RESET << std::endl;
-	// std::cout << BOLD << "┗━━━━━━━━━━┛━━━━━━━━━━┛━━━━━━━━━━┛━━━━━━━━━━┛" << RESET << std::endl;
-	//   index, firstname, lastname, nickname
-// 	┏━━━━  ━  ━  ━  ━  ━  ━  ━  ━  ┓
-//  | ━  ━  ━  ━  ━  ━  ━  ━  ━  ━  ━  ━  ━ ┃
-// ┗━━━━━━━  ━  ━  ━  ━  ━  ━ ┛
+	search.c_str();
+	for(int i = 0; search[i]; i++)
+	{
+		if (!isdigit(search[i]))
+		{
+			std::cout << RED << "Invalid number" << RESET << std::endl;
+			return (-1);
+		}
+	}
+	idx = search[0] - '0';
+	if (search.length() == 1 && idx >= 0 && idx < 8)
+		return (idx);
+	std::cout << RED << "Out 0f range" << RESET << std::endl;
+
+	return (-1);
+}
+
+void	PhoneBook::search_contact(int index)
+{
+	std::string search;
+	int	input;
+
+	std::cout << BLUE << "All contact" << RESET << std::endl;
+	print_contact(index);
+	std::cout << BOLD << "Enter index: " , std::getline (std::cin, search);
+	input = check_index(search);
+	if (input >= 0)
+	{
+		if (input > index - 1)
+			std::cout << RED << "Empty Contact" << RESET << std::endl;
+		std::cout << BOLD << "Index: " << CYAN << this->contact[input].get_firstname() << RESET << std::endl;
+		std::cout << BOLD << "Firstname: " << CYAN << this->contact[input].get_firstname() << RESET << std::endl;
+		std::cout << BOLD << "Lastname: " << CYAN << this->contact[input].get_lastname() << RESET << std::endl;
+		std::cout << BOLD << "Nickname: " << CYAN << this->contact[input].get_nickname() << RESET << std::endl;
+		std::cout << GREEN << "Search contact succesful" << RESET << std::endl;
+	}
 }
