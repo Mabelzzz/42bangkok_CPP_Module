@@ -1,8 +1,7 @@
-NAME = PhoneBook
+NAME = Sed
 
-SRC =	Contact.cpp \
-		main.cpp \
-		Phonebook.cpp \
+SRC =	main.cpp \
+		Sed.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 

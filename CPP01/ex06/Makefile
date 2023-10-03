@@ -1,8 +1,7 @@
-NAME = PhoneBook
+NAME = harlFilter
 
-SRC =	Contact.cpp \
-		main.cpp \
-		Phonebook.cpp \
+SRC =	main.cpp \
+		Harl.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 

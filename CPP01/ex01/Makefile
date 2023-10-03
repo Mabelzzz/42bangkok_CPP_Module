@@ -1,8 +1,8 @@
-NAME = PhoneBook
+NAME = Zombie
 
-SRC =	Contact.cpp \
+SRC =	Zombie.cpp \
 		main.cpp \
-		Phonebook.cpp \
+		zombieHorde.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 
