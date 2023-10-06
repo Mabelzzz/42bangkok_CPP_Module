@@ -1,7 +1,7 @@
-NAME = Harl
+NAME = Account
 
-SRC =	main.cpp \
-		Harl.cpp \
+SRC =	Account.cpp \
+		tests.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

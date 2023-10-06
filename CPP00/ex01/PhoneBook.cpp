@@ -1,16 +1,16 @@
-
 #include "Phonebook.hpp"
 
 int		PhoneBook::check_empty_str(std::string str)
 {
-	if (!str)
-		return (1);
+	int empty = 0;
 	str.c_str();
 	for (int i = 0; str[i]; i++)
 	{
-		if (!isspace(str[i]))
-			return (0);
+		if (isspace(str[i]))
+			empty++;
 	}
+	if (empty == str.length())
+		return (0);
 	return (1);
 }
 
@@ -61,9 +61,9 @@ void	PhoneBook::print_contact(int index)
 			index = 7;
 		else
 			index--;
-		std::cout << YELLOW << "┏━━━━━━━━━━┓━━━━━━━━━━┓━━━━━━━━━━┓━━━━━━━━━━┏━━━━━━━━━━┏━━━━━━━━━━┓" << RESET << std::endl;
-		std::cout << YELLOW << "┃     index┃ firstname┃  lastname┃  nickname┃     phone┃    secret┃" << RESET << std::endl;
-		std::cout << YELLOW << "┗━━━━━━━━━━┗━━━━━━━━━━┗━━━━━━━━━━┗━━━━━━━━━━┗━━━━━━━━━━┗━━━━━━━━━━┛" << RESET << std::endl;
+		std::cout << YELLOW << "┏━━━━━━━━━━┓━━━━━━━━━━┓━━━━━━━━━━┓━━━━━━━━━━┓" << RESET << std::endl;
+		std::cout << YELLOW << "┃     index┃ firstname┃  lastname┃  nickname┃" << RESET << std::endl;
+		std::cout << YELLOW << "┗━━━━━━━━━━┗━━━━━━━━━━┗━━━━━━━━━━┗━━━━━━━━━━┛" << RESET << std::endl;
 	for (int i = 0; i <= index; i++)
 	{
 		std::cout << MAGENTA << std::left << std::setw(1) << "┃";
@@ -71,10 +71,8 @@ void	PhoneBook::print_contact(int index)
 		sub_str(this->contact[i].get_firstname());
 		sub_str(this->contact[i].get_lastname());
 		sub_str(this->contact[i].get_nickname());
-		sub_str(this->contact[i].get_phone());
-		sub_str(this->contact[i].get_secret());
 		std::cout << MAGENTA << "┃" << std::endl;
-		std::cout << MAGENTA << "┗━━━━━━━━━━┗━━━━━━━━━━┗━━━━━━━━━━┗━━━━━━━━━━┗━━━━━━━━━━┗━━━━━━━━━━┛" << RESET << std::endl;
+		std::cout << MAGENTA << "┗━━━━━━━━━━┗━━━━━━━━━━┗━━━━━━━━━━┗━━━━━━━━━━┛" << RESET << std::endl;
 	}
 }
 
@@ -126,6 +124,8 @@ void	PhoneBook::search_contact(int index)
 		std::cout << BOLD << "Firstname: " << CYAN << this->contact[input].get_firstname() << RESET << std::endl;
 		std::cout << BOLD << "Lastname: " << CYAN << this->contact[input].get_lastname() << RESET << std::endl;
 		std::cout << BOLD << "Nickname: " << CYAN << this->contact[input].get_nickname() << RESET << std::endl;
+		std::cout << BOLD << "Phone: " << CYAN << this->contact[input].get_phone() << RESET << std::endl;
+		std::cout << BOLD << "DarkSecret: " << CYAN << this->contact[input].get_secret() << RESET << std::endl;
 		std::cout << GREEN << "Search contact succesful" << RESET << std::endl;
 	}
 }

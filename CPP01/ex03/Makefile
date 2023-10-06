@@ -17,11 +17,9 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	@$(CC) $(CFLAGS) $(CPPFLAGS) $(OBJ) -o $@
-	# @say -v Kanya "คอมพายเมก้าโฟนโอนโอน"
 
 clean:
 	@rm -f $(OBJ)
-	# @say -v Samantha "already clean"
 
 fclean: clean
 	@rm -f $(NAME)

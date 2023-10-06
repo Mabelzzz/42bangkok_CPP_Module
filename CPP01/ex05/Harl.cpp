@@ -41,10 +41,10 @@ void	Harl::complain(std::string level)
 		void (Harl::*_funcs[4])(void) = { &Harl::debug,  &Harl::info,  &Harl::warning,  &Harl::error};
 		for (int i = 0; i < 4; i++)
 		{
-		if (str_upper(level) == _lv[i])
-		{
-			std::cout << BOLD << "[ " + _lv[i] + " ]" << std::endl;
-			(this->*_funcs[i])();
-		}
+			if (str_upper(level) == _lv[i])
+			{
+				std::cout << BOLD << "[ " + _lv[i] + " ]" << std::endl;
+				(this->*_funcs[i])();
+			}
 		}
 }

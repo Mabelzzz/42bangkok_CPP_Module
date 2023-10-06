@@ -18,11 +18,22 @@
 
 class Sed {
 	private:
-		std::string _type;
+		size_t			cur;
+		std::string		s1;
+		std::string		s2;
+		std::string		str;
+		std::string		data;
+		std::string		filename;
+		std::ofstream	outfile;
+		std::ifstream	infile;
 
 	public:
 		Sed();
+		Sed(const std::string& infile, const std::string& s1, const std::string& s2);
 		~Sed();
+		void	get_data();
+		void	replace_str();
+		int	create_outfile();
 
 };
 

@@ -7,9 +7,12 @@ int	main(int argc, char **argv)
 		std::cerr << RED << "Error: Invalid Parameters! " << RESET << std::endl;
 		return (1);
 	}
-	std::ifstream ifs (argv[1]);
-	if(ifs.is_open())
-		
-	std::cout << ifs.is_open() << std::endl;
+	Sed sed(argv[1], argv[2], argv[3]);
+
+
+	sed.get_data();
+	sed.replace_str();
+	if (sed.create_outfile() == 1)
+		std::cerr << RED << "Cannot create outfile" << std::endl;
 	return (0);
 }
