@@ -1,9 +1,9 @@
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef POINT_HPP
+# define POINT_HPP
 
-#pragma once
 # include <iostream>
 # include <string>
+# include "Fixed.hpp"
 
 # define RED		"\033[0;31m"
 # define GREEN		"\033[0;32m"
@@ -16,20 +16,20 @@
 # define BOLD		"\033[1m"
 # define RESET		"\033[0m"
 
-class Fixed {
+class Point {
 	private:
-		int _fpNum;
-		static const int bits = 8;
+		Fixed _x;
+		Fixed _y;
 
 	public:
-		Fixed();
-		Fixed(const Fixed &copy);
-		~Fixed();
+		Point();
+		Point(Point const& tmp);
+		Point(float const x, float const );
+		// Fixed(const int nbr);
+		// Fixed(const float nbr);
+		~Point();
 
-
-		int getRawBits( void ) const;
-		void setRawBits( int const raw );
-		Fixed& operator=(Fixed const& rhs);
+	bool bsp(Point const a, Point const b, Point const c, Point const point);
 };
 
 #endif
