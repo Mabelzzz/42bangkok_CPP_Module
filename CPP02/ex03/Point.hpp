@@ -24,12 +24,14 @@ class Point {
 	public:
 		Point();
 		Point(Point const& tmp);
-		Point(float const x, float const );
-		// Fixed(const int nbr);
-		// Fixed(const float nbr);
+		Point(float const x, float const y);
 		~Point();
 
-	bool bsp(Point const a, Point const b, Point const c, Point const point);
+		Fixed	getPointX(void) const;
+		Fixed	getPointY(void) const;
+
 };
+
+bool bsp(Point const a, Point const b, Point const c, Point const point);
 
 #endif
