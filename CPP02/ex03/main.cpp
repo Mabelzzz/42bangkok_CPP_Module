@@ -1,16 +1,26 @@
-#include "Fixed.hpp"
+#include "Point.hpp"
 
-int	main(void)
+void	check_inside(bool var)
 {
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << Fixed::max( a, b ) << std::endl;
+	if (var)
+		std::cout << "Point is inside the triangle" << std::endl;
+	else
+		std::cout << "Point isn't inside the triangle" << std::endl;
+}
 
-	return (0);
+int main( void ) {
+
+	Point	a(1, 1);
+	Point	b(3, 5);
+	Point	c(5, 1);
+
+	std::cout << "Inside Triangle : ";
+	check_inside(bsp(a, b, c, Point(2, 2)));
+
+	std::cout << "Outside Triangle: ";
+	check_inside(bsp(a, b, c, Point(5, 5)));
+
+	std::cout << "Lie on ac linear: ";
+	check_inside(bsp(a, b, c, Point(3, 1)));
+	return 0;
 }

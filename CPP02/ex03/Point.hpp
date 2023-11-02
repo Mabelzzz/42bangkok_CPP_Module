@@ -29,9 +29,12 @@ class Point {
 
 		Fixed	getPointX(void) const;
 		Fixed	getPointY(void) const;
+		Point &	operator=(Point const& rhs);
 
 };
 
-bool bsp(Point const a, Point const b, Point const c, Point const point);
+bool	bsp(Point const a, Point const b, Point const c, Point const point);
+Fixed	area(Point const a, Point const b, Point const c);
+// void	prtTest(bool var)
 
 #endif

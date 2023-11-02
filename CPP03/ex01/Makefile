@@ -1,9 +1,7 @@
-NAME = Point
+NAME = ClapTrap
 
 SRC =	main.cpp \
-		Fixed.cpp \
-		Point.cpp \
-		bsp.cpp \
+		ClapTrap.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 
