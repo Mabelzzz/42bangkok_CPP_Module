@@ -1,9 +1,7 @@
-NAME = Point
+NAME = Polymorphism
 
 SRC =	main.cpp \
-		Fixed.cpp \
-		Point.cpp \
-		bsp.cpp \
+		Animal.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 

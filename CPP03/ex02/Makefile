@@ -1,9 +1,9 @@
-NAME = Point
+NAME = FragTrap
 
 SRC =	main.cpp \
-		Fixed.cpp \
-		Point.cpp \
-		bsp.cpp \
+		ClapTrap.cpp \
+		ScavTrap.cpp \
+		FragTrap.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 

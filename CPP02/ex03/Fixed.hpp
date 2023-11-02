@@ -3,6 +3,7 @@
 
 # include <iostream>
 # include <string>
+# include <cmath>
 
 # define RED		"\033[0;31m"
 # define GREEN		"\033[0;32m"

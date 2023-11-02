@@ -1,7 +1,12 @@
 #include "ClapTrap.hpp"
 
-int main( void ) {
-	ClapTrap mario = ClapTrap("Mario");
+int main(void)
+{
+	ClapTrap	mb("Mobile");
 
-	mario.attack("Z");
+	mb.attack("Dragon");
+	mb.takeDamage(30);
+	mb.beRepaired(15);
+
+	return 0;
 }

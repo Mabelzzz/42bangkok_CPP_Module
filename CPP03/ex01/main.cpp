@@ -1,7 +1,13 @@
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
-int main( void ) {
-	ClapTrap mario = ClapTrap("Mario");
+int	main(void)
+{
+	ScavTrap	st("Mobile");
 
-	mario.attack("Z");
+	st.attack("Dragon");
+
+	st.takeDamage(30);
+	st.beRepaired(15);
+	st.guardGate();
+	return 0;
 }

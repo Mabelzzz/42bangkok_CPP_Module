@@ -68,3 +68,4 @@ void ClapTrap::beRepaired(unsigned int amount)
 	else
 		std::cout << "ClapTrap cannot be repaired 'cuz there is not enough point." << std::endl;
 }
+

@@ -3,6 +3,7 @@
 
 # include <iostream>
 # include <string>
+# include <cmath>
 
 # define RED		"\033[0;31m"
 # define GREEN		"\033[0;32m"
@@ -32,7 +33,7 @@ class Fixed {
 		void setRawBits( int const raw );
 		float toFloat(void) const;
 		int toInt(void) const;
-		
+
 		Fixed& operator=(Fixed const& rhs);
 };
 

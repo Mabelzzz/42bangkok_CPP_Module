@@ -1,9 +1,10 @@
-NAME = Point
+NAME = DiamondTrap
 
 SRC =	main.cpp \
-		Fixed.cpp \
-		Point.cpp \
-		bsp.cpp \
+		ClapTrap.cpp \
+		ScavTrap.cpp \
+		FragTrap.cpp \
+		DiamondTrap.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 
