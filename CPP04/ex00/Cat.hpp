@@ -1,17 +1,17 @@
 #ifndef CAT_HPP
 # define CAT_HPP
 
-# include <iostream>
-# include <string>
+# include"Animal.hpp"
 
 class Cat: public Animal
 {
-	protected:
-
-
 	public:
+		Cat();
+		Cat(const Cat &copy);
+		Cat& operator=(Cat const& rhs);
+		~Cat();
 
-
+		void	makeSound() const;
 };
 
 #endif

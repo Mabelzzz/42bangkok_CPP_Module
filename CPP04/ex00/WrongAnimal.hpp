@@ -1,5 +1,5 @@
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 
 # include <iostream>
 # include <string>
@@ -11,19 +11,19 @@
 # define MAGENTA	"\033[0;35m"
 # define RESET		"\033[0m"
 
-class Animal
+class WrongAnimal
 {
 	protected:
 		std::string		type;
 
 	public:
-		Animal();
-		Animal(std::string new_type);
-		Animal(Animal const &copy);
-		Animal&	operator=(Animal const& rhs);
-		virtual ~Animal();
+		WrongAnimal();
+		WrongAnimal(std::string new_type);
+		WrongAnimal(WrongAnimal const &copy);
+		WrongAnimal&	operator=(WrongAnimal const& rhs);
+		virtual ~WrongAnimal();
 
-		virtual void	makeSound() const;
+		void	makeSound() const;
 		std::string	get_type() const;
 
 };
