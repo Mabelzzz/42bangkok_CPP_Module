@@ -7,15 +7,17 @@
 class Animal
 {
 	protected:
-		std::string		_type;
+		std::string		type;
 
 	public:
-		Animal(std::string type);
+		Animal();
+		Animal(std::string new_type);
 		Animal(Animal const &copy);
 		Animal&	operator=(Animal const& rhs);
 		~Animal();
 
 		void	makeSound();
+		std::string	get_type();
 
 };
 
