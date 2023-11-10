@@ -7,7 +7,7 @@ SRC =	main.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 
-CC = c++
+CXX = c++
 
 CFLAGS = -Wall -Wextra -Werror
 
@@ -16,7 +16,7 @@ CPPFLAGS = -std=c++98
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@$(CC) $(CFLAGS) $(CPPFLAGS) $(OBJ) -o $@
+	@$(CXX) $(CFLAGS) $(CPPFLAGS) $(OBJ) -o $@
 
 clean:
 	@rm -f $(OBJ)
