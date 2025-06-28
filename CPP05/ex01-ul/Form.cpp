@@ -3,7 +3,7 @@
 Form::Form(): _name(""), _isSigned(false), _gradeToSign(0), _gradeToExecute(0) {
 	std::cout << "Form default constructor" << std::endl;
 }
-Form::Form(const std::string& name, bool& isSigned, const int& gradeToSign, const int& gradeToExecute) : _name(name), _isSigned(isSigned), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute) {
+Form::Form( const std::string &_name, bool &_isSigned, const int &_gradeToSign, const int &_gradeToExecute): _name(_name), _isSigned(_isSigned), _gradeToSign(_gradeToSign), _gradeToExecute(_gradeToExecute) {
 	std::cout << "Form constructor" << std::endl;
 }
 

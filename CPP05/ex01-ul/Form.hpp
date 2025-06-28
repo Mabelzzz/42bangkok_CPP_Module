@@ -15,13 +15,13 @@ class Form {
 
 	public:
 		Form();
-		Form(const std::string& name, bool& isSigned, const int& gradeToSign, const int& gradeToExecute);
-		Form(const Form& copy);
+		Form( const std::string &_name, bool &_isSigned, const int &_gradeToSign, const int &_gradeToExecute);
+		Form(Form const &copy);
 		~Form();
-		void beSigned(Bureaucrat& buro);
+		void beSigned(Bureaucrat &buro);
 		// signForm();
 
 };
 
-std::ostream &operator<<( std::ostream& os, const Form& form);
+std::ostream &operator<<( std::ostream& os, const Form &form );
 #endif

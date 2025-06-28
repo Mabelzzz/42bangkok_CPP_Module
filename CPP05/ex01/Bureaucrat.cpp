@@ -1,13 +1,5 @@
 #include "Bureaucrat.hpp"
 
-// void Bureaucrat::GradeTooHighException::printError() {
-// 	std::cout << "Grade is too high" << std::endl;
-// }
-
-// void Bureaucrat::GradeTooLowException::printError() {
-// 	std::cout << "Grade is too low" << std::endl;
-// }
-
 int Bureaucrat::checkGrade() {
 	if (_grade < 1)
 		throw GradeTooHighException();
@@ -23,53 +15,54 @@ Bureaucrat::Bureaucrat(): _name(""), _grade(0) {
 	checkGrade();
 }
 
-Bureaucrat::Bureaucrat( const std::string &name, const int &grade ): _name(name), _grade(grade) {
+Bureaucrat::Bureaucrat(const std::string& name, const int& grade ): _name(name), _grade(grade) {
 	std::cout << "Bureaucrat constructor" << std::endl;
     checkGrade();
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat const & copy) : _name(copy.getName()), _grade(copy.getGrade())
+Bureaucrat::Bureaucrat(const Bureaucrat& copy) : _name(copy.getName()), _grade(copy.getGrade())
 {
 	if (checkGrade())
 		std::cout << "Bureaucrat " << _name << " copy constructor called" << std::endl;
 }
 
+Bureaucrat& Bureaucrat::operator=(const Bureaucrat& copy)
+{
+	if (this != &copy)
+		this->_grade = copy.getGrade();
+	if (checkGrade())
+		std::cout << "Bureaucrat " << this->_name << " copy assignment called" << std::endl;
+	return (*this);
+}
+
 Bureaucrat::~Bureaucrat() {
 	std::cout << "Bureaucrat destructor" << std::endl;
 }
+
 std::string Bureaucrat::getName() const
 {
-	return (_name);
+	return (this->_name);
 }
 
 int Bureaucrat::getGrade() const
 {
-	return (_grade);
+	return (this->_grade);
 }
 
-void Bureaucrat::increment()
+void Bureaucrat::incrementGrade()
 {
-	_grade += 1;
+	this->_grade += 1;
 	checkGrade();
 }
 
-void Bureaucrat::decrement()
+void Bureaucrat::decrementGrade()
 {
-	_grade -= 1;
+	this->_grade -= 1;
 	checkGrade();
 }
-// Bureaucrat(Bureaucrat const &copy);
-Bureaucrat & Bureaucrat::operator=(Bureaucrat const &copy)
+
+std::ostream &operator<<( std::ostream& o, const Bureaucrat& buro ) 
 {
-	if (this != &copy)
-		_grade = copy.getGrade();
-	if (checkGrade())
-		std::cout << "Bureaucrat " << _name << " copy assignment called" << std::endl;
-	return (*this);
-}
-
-
-std::ostream &operator<<( std::ostream& o, const Bureaucrat &buro ) {
 	o << buro.getName() << ", bureaucrat grade " << buro.getGrade();
 	return o;
 }
