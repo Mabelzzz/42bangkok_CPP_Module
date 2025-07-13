@@ -59,7 +59,7 @@ void Bureaucrat::decrementGrade()
     _grade++;
 }
 
-void Bureaucrat::signForm(Form& f) {
+void Bureaucrat::signForm(AForm& f) {
     try {
         f.beSigned(*this);
         std::cout << GREEN << _name << " signed " << f.getName() << RESET << std::endl;
@@ -69,6 +69,14 @@ void Bureaucrat::signForm(Form& f) {
     }
 }
 
+void Bureaucrat::executeForm(AForm const& f) const {
+    try {
+        f.execute(*this);
+        std::cout << BLUE << _name << " executed " << f.getName() << RESET << std::endl;
+    } catch (std::exception& e) {
+        std::cout << RED << _name << " couldn’t execute " << f.getName() << " because " << e.what() << RESET << std::endl;
+    }
+}
 const char* Bureaucrat::GradeTooHighException::what() const throw()
 {
     return ("Grade too high!");
