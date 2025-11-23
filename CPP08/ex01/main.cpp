@@ -38,5 +38,15 @@ int main()
     catch (const std::exception& e) {
         std::cerr << RED << "Error: " << e.what() << RESET << std::endl;
     }
+    std::cout << YELLOW << "--- Test Span Full Exception ---" << RESET << std::endl;
+    try {
+        Span fullSp(2);
+        fullSp.addNumber(1);
+        fullSp.addNumber(2);
+        fullSp.addNumber(3); // Throw Exception
+    }
+    catch (const std::exception& e) {
+        std::cerr << RED << "Expected Error: " << e.what() << RESET << std::endl;
+    }
 	return 0;
 }

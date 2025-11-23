@@ -7,7 +7,7 @@ SRCS = main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
-HDRS = Array.hpp
+HDRS = Array.hpp Array.tpp
 
 all: $(NAME)
 

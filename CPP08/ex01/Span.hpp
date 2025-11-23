@@ -12,7 +12,7 @@
 #include <iostream>
 #include <vector>
 #include <stdexcept>
-#include <algorithm> // std::sort, std::minmax_element
+#include <algorithm> // std::sort
 
 class Span {
 	private:
@@ -33,15 +33,12 @@ class Span {
 
 		template <typename Iterator>
 		void addManyNumbers(Iterator begin, Iterator end) {
-			// 1. คำนวณจำนวนข้อมูลที่จะเพิ่ม
 			unsigned int amount = std::distance(begin, end);
 
-			// 2. เช็คพื้นที่ว่าง: ถ้าใส่เพิ่มแล้วเกินขนาดสูงสุด (_n) ให้ Throw Error
 			if (this->_numbers.size() + amount > this->_n) {
 				throw SpanFullException();
 			}
 
-			// 3. ใช้ insert เพื่อยัดข้อมูลทั้งหมดต่อท้าย vector ทีเดียว (เร็วกว่าวนลูป push_back)
 			this->_numbers.insert(this->_numbers.end(), begin, end);
 		}
 

@@ -43,7 +43,6 @@ int main()
     }
     std::cout << RESET << std::endl;
 
-    // ทดสอบ Copy Constructor ไปใส่ std::stack ธรรมดา
     std::stack<int> s(mstack);
 
     std::cout << YELLOW << "--- Testing std::list (For comparison) ---" << RESET << std::endl;
@@ -53,9 +52,8 @@ int main()
     lst.push_back(5);
     lst.push_back(17);
 
-    std::cout << "Top: " << lst.back() << std::endl; // list ใช้ back() แทน top()
-
-    lst.pop_back(); // list ใช้ pop_back() แทน pop()
+    std::cout << "Top: " << lst.back() << std::endl;
+    lst.pop_back();
 
     std::cout << "Size: " << lst.size() << std::endl;
 

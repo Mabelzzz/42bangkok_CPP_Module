@@ -48,7 +48,7 @@ unsigned int Span::shortestSpan() {
 
 unsigned int Span::longestSpan() {
 	std::vector<int> sortedNumbers = checkAndSort();
-	return sortedNumbers.back() - sortedNumbers.front();
+	return (unsigned int)(sortedNumbers.back() - sortedNumbers.front());
 }
 
 std::vector<int> Span::checkAndSort() {
